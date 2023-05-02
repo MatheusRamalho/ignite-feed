@@ -50,7 +50,7 @@ body {
 }
 
 body, input, textarea, button, span, p {
-    font-family: var(--fiont-family);
+    font-family: var(--font-family);
     font-size: var(--font-base);
     line-height: 160%;
 }
