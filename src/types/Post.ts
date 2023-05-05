@@ -2,7 +2,7 @@ import { AuthorType } from "./PostAuthor";
 import { ContentType } from "./PostContent";
 
 export type PostType = {
-    id: number;
+    id: string;
     author: AuthorType;
     content: ContentType[];
     publishedAt: Date;

@@ -6,13 +6,13 @@ type ModalProps = {
 
     isOpenModal: boolean;
     onModalClose: () => void;
-    onModalDeleteComment: (content: string) => void;
-    contentComment: string;
+    onModalDeleteComment: (id: string) => void;
+    commentId: string;
 }
 
-export const Modal = ({ title, description, isOpenModal = false, onModalClose, onModalDeleteComment, contentComment }: ModalProps) => {
+export const Modal = ({ title, description, isOpenModal = false, onModalClose, onModalDeleteComment, commentId }: ModalProps) => {
     const handleDeleteComment = () => {
-        onModalDeleteComment(contentComment);
+        onModalDeleteComment(commentId);
     }
 
     return (

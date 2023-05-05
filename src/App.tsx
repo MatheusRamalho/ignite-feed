@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from 'uuid'
+
 import './styles/global.css'
 
 import { PostType } from './types/Post'
@@ -6,7 +8,7 @@ import { Post } from './components/Post'
 
 const posts: PostType[] = [
 	{
-		id: 1,
+		id: uuidv4(),
 		author: {
 			avatarUrl: 'http://www.github.com/matheusramalho.png',
 			name: 'Matheus Ramalho Silva',
@@ -21,7 +23,7 @@ const posts: PostType[] = [
 	},
 
 	{
-		id: 2,
+		id: uuidv4(),
 		author: {
 			avatarUrl: 'http://www.github.com/matheusramalho.png',
 			name: 'Vívian Ribeiro',

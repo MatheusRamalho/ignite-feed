@@ -1,6 +1,7 @@
 import { ChangeEvent, FormEvent, InvalidEvent, useState } from 'react'
 import { format, formatDistanceToNow } from 'date-fns'
 import { ptBR } from 'date-fns/locale'
+import { v4 as uuidv4 } from 'uuid'
 
 import { PostProps } from './Post.types'
 import { Comment } from '../Comment'
@@ -10,7 +11,9 @@ import styles from './Post.module.css'
 import { Modal } from '../Modal'
 
 export const Post = ({ post }: PostProps) => {
-    const [comments, setComments] = useState(['Post muito bacana']);
+    const [comments, setComments] = useState([
+        { id: uuidv4(), content: 'Post muito bacana' },
+    ]);
     const [newCommentText, setNewCommentText] = useState('');
 
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -30,7 +33,10 @@ export const Post = ({ post }: PostProps) => {
     const handleCreateNewComment = (event: FormEvent) => {
         event.preventDefault();
 
-        setComments([...comments, newCommentText]);
+        setComments([...comments, {
+            id: uuidv4(),
+            content: newCommentText
+        }]);
         setNewCommentText('');
     }
 
@@ -45,7 +51,7 @@ export const Post = ({ post }: PostProps) => {
 
     const deleteComment = (commentToDelete: string) => {
         const commentsWithoutDeletedOne = comments.filter(comment => {
-            return comment !== commentToDelete;
+            return comment.id !== commentToDelete;
         });
 
         setComments(commentsWithoutDeletedOne);
@@ -63,7 +69,7 @@ export const Post = ({ post }: PostProps) => {
 
     return (
         <>
-            <article className={styles.post}>
+            <article className={styles.post} id={post.id}>
                 <header className={styles.postHeader}>
                     <div className={styles.headerAuthor}>
                         <Avatar src={post.author.avatarUrl} />
@@ -135,9 +141,10 @@ export const Post = ({ post }: PostProps) => {
                     {comments.map(comment => {
                         return (
                             <Comment
-                                key={comment}
-                                content={comment}
-                                onDeleteComment={() => handleModalOpen(comment)}
+                                key={comment.id}
+                                id={comment.id}
+                                content={comment.content}
+                                onDeleteComment={() => handleModalOpen(comment.id)}
                             />
                         );
                     })}
@@ -150,7 +157,7 @@ export const Post = ({ post }: PostProps) => {
                 isOpenModal={isModalOpen}
                 onModalClose={handleModalClose}
                 onModalDeleteComment={deleteComment}
-                contentComment={modalCommentContent}
+                commentId={modalCommentContent}
             />
         </>
     );

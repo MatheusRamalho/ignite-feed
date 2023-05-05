@@ -6,7 +6,7 @@ import { Avatar } from '../Avatar'
 
 import styles from './Comment.module.css'
 
-export const Comment = ({ content, onDeleteComment }: CommentProps) => {
+export const Comment = ({ id, content, onDeleteComment }: CommentProps) => {
     const [likeCount, setLikeCount] = useState(0);
 
     const handleDeleteComment = () => {
@@ -20,7 +20,7 @@ export const Comment = ({ content, onDeleteComment }: CommentProps) => {
     }
 
     return (
-        <article className={styles.comment}>
+        <article className={styles.comment} id={id}>
             <Avatar
                 hasBorder={false}
                 src="http://www.github.com/matheusramalho.png"
