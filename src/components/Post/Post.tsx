@@ -97,15 +97,12 @@ export const Post = ({ post }: PostProps) => {
 
                 <div className={styles.postContent}>
                     {post.content.map((line) => {
-                        if (line.type === 'paragraph') {
-                            return <p key={line.content}> {line.content} </p>
-                        } else if (line.type === 'link') {
-                            return (
-                                <p key={line.content}>
-                                    <a href="#"> {line.content} </a>
-                                </p>
-                            )
-                        }
+                        return (
+                            <p key={line.content}>
+                                {line.type === 'paragraph' && line.content}
+                                {line.type === 'link' && <a href="#"> {line.content} </a>}
+                            </p>
+                        )
                     })}
 
                     <p>
