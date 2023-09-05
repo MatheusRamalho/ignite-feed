@@ -1,18 +1,18 @@
 import styles from './Modal.module.css'
 
 type ModalProps = {
-    title: string;
-    description: string;
+    title: string
+    description: string
 
-    isOpenModal: boolean;
-    onModalClose: () => void;
-    onModalDeleteComment: (id: string) => void;
-    commentId: string;
+    isOpenModal: boolean
+    onModalClose: () => void
+    onModalDeleteComment: (id: string) => void
+    commentId: string
 }
 
 export const Modal = ({ title, description, isOpenModal = false, onModalClose, onModalDeleteComment, commentId }: ModalProps) => {
     const handleDeleteComment = () => {
-        onModalDeleteComment(commentId);
+        onModalDeleteComment(commentId)
     }
 
     return (
@@ -22,21 +22,15 @@ export const Modal = ({ title, description, isOpenModal = false, onModalClose, o
                 <p> {description} </p>
 
                 <div>
-                    <button
-                        type="button"
-                        onClick={onModalClose}
-                    >
+                    <button type="button" onClick={onModalClose}>
                         Cancelar
                     </button>
 
-                    <button
-                        type="button"
-                        onClick={handleDeleteComment}
-                    >
+                    <button type="button" onClick={handleDeleteComment}>
                         Sim, excluir
                     </button>
                 </div>
             </div>
         </div>
-    );
+    )
 }

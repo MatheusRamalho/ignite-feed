@@ -9,6 +9,7 @@ export const Sidebar = () => {
         <aside className={styles.sidebar}>
             <img
                 className={styles.sidebarCover}
+                alt=""
                 src="https://images.unsplash.com/photo-1607799279861-4dd421887fb3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=50"
             />
 
@@ -26,5 +27,5 @@ export const Sidebar = () => {
                 </a>
             </footer>
         </aside>
-    );
+    )
 }

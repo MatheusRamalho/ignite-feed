@@ -1,9 +1,17 @@
-import { AuthorType } from "./PostAuthor";
-import { ContentType } from "./PostContent";
+export type PostAuthor = {
+    avatarUrl: string
+    name: string
+    role: string
+}
+
+export type PostContent = {
+    type: 'paragraph' | 'link'
+    content: string
+}
 
 export type PostType = {
-    id: string;
-    author: AuthorType;
-    content: ContentType[];
-    publishedAt: Date;
+    id: string
+    author: PostAuthor
+    content: PostContent[]
+    publishedAt: Date
 }
