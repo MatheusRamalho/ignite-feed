@@ -1,13 +1,22 @@
-import styles from './Header.module.css'
+import Image from 'next/image'
 
-import igniteLogo from '../../assets/ignite-logo-simbol.svg'
+import igniteLogo from '@/assets/svgs/ignite-logo-simbol.svg'
 
-export const Header = () => {
+export function Header() {
     return (
-        <div className={styles.header}>
-            <img src={igniteLogo} alt="Ignite simbol" />
+        <div className="bg-gray-800 flex items-center justify-center px-0 py-5">
+            <Image
+                width={40}
+                height={40}
+                className="h-10"
+                src={igniteLogo}
+                alt="Ignite simbol"
+            />
 
-            <strong> Ignite feed </strong>
+            <strong className="font-bold text-base ml-4 text-white">
+                {' '}
+                Ignite feed{' '}
+            </strong>
         </div>
     )
 }

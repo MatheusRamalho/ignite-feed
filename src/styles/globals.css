@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+form.post-comment:focus-within footer {
+    visibility: visible;
+    max-height: none;
+}

@@ -1,15 +1,17 @@
-export type PostAuthor = {
-    avatarUrl: string
+import { StaticImageData } from 'next/image'
+
+export interface PostAuthor {
+    avatarUrl: StaticImageData | string
     name: string
     role: string
 }
 
-export type PostContent = {
+export interface PostContent {
     type: 'paragraph' | 'link'
     content: string
 }
 
-export type PostType = {
+export interface PostType {
     id: string
     author: PostAuthor
     content: PostContent[]

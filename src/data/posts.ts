@@ -1,12 +1,14 @@
 import { v4 as uuidv4 } from 'uuid'
 
-import { PostType } from '../types/Post'
+import { PostType } from '@/types/Post'
+
+import avatarImg from '@/assets/imgs/user.jpeg'
 
 export const postsData: PostType[] = [
     {
         id: uuidv4(),
         author: {
-            avatarUrl: 'http://www.github.com/matheusramalho.png',
+            avatarUrl: avatarImg,
             name: 'Matheus Ramalho Silva',
             role: 'Web Developer',
         },
@@ -25,7 +27,7 @@ export const postsData: PostType[] = [
     {
         id: uuidv4(),
         author: {
-            avatarUrl: 'http://www.github.com/matheusramalho.png',
+            avatarUrl: avatarImg,
             name: 'Vívian Ribeiro',
             role: 'Web Design',
         },

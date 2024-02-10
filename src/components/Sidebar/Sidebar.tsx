@@ -1,30 +1,43 @@
-import { PencilLine } from '@phosphor-icons/react'
-
-import styles from './Sidebar.module.css'
+import Link from 'next/link'
+import Image from 'next/image'
 
 import { Avatar } from '../Avatar'
+import { Icon } from '../Icon'
 
-export const Sidebar = () => {
+import bgImg from '@/assets/imgs/bg.png'
+import avatarImg from '@/assets/imgs/user.jpeg'
+
+export function Sidebar() {
     return (
-        <aside className={styles.sidebar}>
-            <img
-                className={styles.sidebarCover}
+        <aside className="bg-gray-800 rounded-lg overflow-hidden">
+            <Image
+                className="w-full h-[72px] object-cover"
+                width={72}
+                height={72}
+                src={bgImg}
                 alt=""
-                src="https://images.unsplash.com/photo-1607799279861-4dd421887fb3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=50"
             />
 
-            <div className={styles.sidebarProfile}>
-                <Avatar src="http://www.github.com/matheusramalho.png" />
+            <div className="flex flex-col items-center mt-[calc(0px_-_1.5rem_-_0.375rem)]">
+                <Avatar src={avatarImg} />
 
-                <strong> Matheus Ramalho </strong>
-                <span> Web Developer </span>
+                <strong className="text-gray-100 leading-[1.6] mt-4">
+                    Matheus Ramalho
+                </strong>
+
+                <span className="text-sm text-gray-400 leading-[1.6]">
+                    Web Developer
+                </span>
             </div>
 
-            <footer className={styles.sidebarFooter}>
-                <a href="#">
-                    <PencilLine size={20} />
+            <footer className="border-t-gray-600 mt-6 pt-6 pb-8 px-8 border-t border-solid">
+                <Link
+                    href="#"
+                    className="h-[3.125rem] bg-transparent border-green-500 rounded-lg font-bold text-green-500 no-underline flex items-center justify-center gap-3 transition-colors duration-200 delay-200 px-4 py-0 border border-solid hover:bg-green-500 hover:text-white"
+                >
+                    <Icon name="pencil-line" customClass="size-5" />
                     Editar seu perfil
-                </a>
+                </Link>
             </footer>
         </aside>
     )
