@@ -10,7 +10,7 @@ import { Comment } from './comment'
 import { Avatar } from './avatar'
 import { Modal } from './modal'
 
-import { PostType } from '@/types/post'
+import { PostType } from '@/types/Post'
 
 export interface PostProps {
     post: PostType
