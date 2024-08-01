@@ -14,8 +14,7 @@ export function Header() {
             />
 
             <strong className="font-bold text-base ml-4 text-white">
-                {' '}
-                Ignite feed{' '}
+                Ignite feed
             </strong>
         </div>
     )

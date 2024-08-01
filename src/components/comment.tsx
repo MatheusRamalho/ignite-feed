@@ -2,8 +2,8 @@
 
 import { useState } from 'react'
 
-import { Avatar } from '../Avatar'
-import { Icon } from '../Icon'
+import { Avatar } from './avatar'
+import { Icon } from './icon'
 
 import avatarImg from '@/assets/imgs/user.jpeg'
 

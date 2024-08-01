@@ -6,11 +6,11 @@ import { format, formatDistanceToNow } from 'date-fns'
 import { ptBR } from 'date-fns/locale'
 import { v4 as uuidv4 } from 'uuid'
 
-import { Comment } from '../Comment'
-import { Avatar } from '../Avatar'
-import { Modal } from '../Modal'
+import { Comment } from './comment'
+import { Avatar } from './avatar'
+import { Modal } from './modal'
 
-import { PostType } from '@/types/Post'
+import { PostType } from '@/types/post'
 
 export interface PostProps {
     post: PostType

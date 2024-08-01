@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from 'uuid'
 
-import { PostType } from '@/types/Post'
+import { PostType } from '@/types/post'
 
 import avatarImg from '@/assets/imgs/user.jpeg'
 

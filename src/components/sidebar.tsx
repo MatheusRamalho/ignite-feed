@@ -1,8 +1,8 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
-import { Avatar } from '../Avatar'
-import { Icon } from '../Icon'
+import { Avatar } from './avatar'
+import { Icon } from './icon'
 
 import bgImg from '@/assets/imgs/bg.png'
 import avatarImg from '@/assets/imgs/user.jpeg'
